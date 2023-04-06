@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     // MARK: - Model Object
     
-    let storyBrain = StoryBrain()
+    var storyBrain = StoryBrain()
     
     // MARK: - Class Methods
     
@@ -25,11 +25,17 @@ class ViewController: UIViewController {
         
         updateUI()
     }
-
+    
+    
+    @IBAction func choiceMade(_ sender: UIButton) {
+        storyBrain.nextStory(sender.currentTitle!)
+        updateUI()
+    }
+    
     func updateUI() {
-        storyLabel.text = storyBrain.updateStoryText()
-        choice1Button.setTitle(storyBrain.updateButton1Text(), for: .normal)
-        choice2Button.setTitle(storyBrain.updateButton2Text(), for: .normal)
+        storyLabel.text = storyBrain.getStoryText()
+        choice1Button.setTitle(storyBrain.getButton1Text(), for: .normal)
+        choice2Button.setTitle(storyBrain.getButton2Text(), for: .normal)
     }
 }
 
