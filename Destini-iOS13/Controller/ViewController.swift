@@ -23,8 +23,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateUI()
     }
 
-
+    func updateUI() {
+        storyLabel.text = storyBrain.updateStoryText()
+        choice1Button.setTitle(storyBrain.updateButton1Text(), for: .normal)
+        choice2Button.setTitle(storyBrain.updateButton2Text(), for: .normal)
+    }
 }
 
