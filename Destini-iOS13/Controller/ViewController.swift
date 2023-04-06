@@ -14,9 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice1Button: UIButton!
     @IBOutlet weak var choice2Button: UIButton!
     
+    // MARK: - Model Object
+    
+    let storyBrain = StoryBrain()
+    
+    // MARK: - Class Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 
 
